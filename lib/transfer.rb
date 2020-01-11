@@ -29,6 +29,7 @@ class Transfer
       self.execute_transaction
       self.swap_persons
     end
+  end
 
   def swap_persons
     @sender,@receiver = @receiver,@sender
