@@ -27,7 +27,7 @@ class Transfer
   def reverse_transfer
     if @status == "complete"
       self.swap_persons
-      @status = pending
+      @status = "pending"
       self.execute_transaction
       self.swap_persons
       @status = "reversed"
