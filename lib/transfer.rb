@@ -1,3 +1,4 @@
+require 'pry'
 class Transfer
   attr_accessor :sender, :receiver, :amount, :status
 
@@ -26,8 +27,11 @@ class Transfer
   def reverse_transfer
     if @status == "complete"
       self.swap_persons
+      binding.pry
       self.execute_transaction
+      binding.pry
       self.swap_persons
+      @status = "reversed"
     end
   end
 
